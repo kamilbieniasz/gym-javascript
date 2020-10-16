@@ -99,8 +99,10 @@ body {
     height: 30vh;
   }
 }
+.first{
+  background-image: url("./images/kaigreenephoto.jpg");
+}
 .spaceParallax{
-    background-image: url("./images/kaigreenephoto.jpg");
     height:60vh;
     background-attachment: fixed;
     background-position: center;
@@ -109,14 +111,18 @@ body {
 }
 .priceList {
   width: 100vw;
-  height: 70vh;
+  height: 100vh;
   background-color: white;
   display:flex;
   justify-content: center;
   align-items: center;
   position: relative;
-  .cardContainer{
-      display:flex;
+
+  .sectionName{
+    position:absolute;
+    top:0;
+    font-size:80px;
+  }
     .card{
         display: flex;
         flex-direction: column;
@@ -147,18 +153,151 @@ body {
             margin-top:20px;
         }
         ul{
-            height:60%;
+            
             display:flex;
             flex-direction: column;
             justify-content: center;
             color:white;
             list-style-type: none;
+            margin-top:50px;
             li:before{
                 content:'✓';
             }
         }
+        .buyBtn{
+          width:100px;
+          height:40px;
+          border: 2px solid white;
+          color:white;
+          background-color: transparent;
+          border-radius:20px;
+          position:absolute;
+          bottom:5%;
+          cursor: pointer;
+          &:hover{
+            background-color: #a0cadf !important;
+            color:white !important;
+            transition: .4s ease-out;
+          }
+          
+          &:focus, &:active{
+            outline:none;
+          }
+        }
     }
+}
+.second{
+  background-image: url("./images/parallax2.jpg");
+}
+.groupClasses{
+  background-color:white;
+  width:100vw;
+  height:100vh;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  transition: .4s ease-out;
+  .title{
+    text-align: center;
+    font-size: 80px;
+    margin-top:20px;
+  }
+  .cardContainer{
+    display:flex;
+    justify-content: space-evenly;
+    align-items: center;
+    .card{
+      width:300px;
+      height:450px;
+      border: 2px solid black;
+      border-top-right-radius: 20px;
+      border-bottom-left-radius: 20px;
+      transition: .2s ease-out;
+      position: relative;
+      -webkit-box-shadow: 10px 10px 44px 0px rgba(160,202,223,1);
+      -moz-box-shadow: 10px 10px 44px 0px rgba(160,202,223,1);
+      box-shadow: 10px 10px 44px 0px rgba(160,202,223,1);
+      .zumba{
+        width:100%;
+        height:100%;
+        object-fit: cover;
+        border-top-right-radius: 20px;
+        border-bottom-left-radius: 20px;
+      }
+      .titleCard{
+        width:50%;
+        height:40px;
+        margin:0;
+        color:#a0cadf;
+        background-color: white;
+        position: absolute;
+        bottom:-5%;
+        right:-5%;
+        display:flex;
+        justify-content: center;
+        align-items: center;
+        -webkit-box-shadow: 10px 10px 44px 0px rgba(160,202,223,1);
+        -moz-box-shadow: 10px 10px 44px 0px rgba(160,202,223,1);
+        box-shadow: 10px 10px 44px 0px rgba(160,202,223,1);
+        transition: .2s ease-out;
+
+      }
+      &:hover{
+        transform:scale(1.05);
+        transition: .2s ease-out;
+      }
+      &:hover .titleCard{
+        transform:translateX(-5%);
+        transition: .2s ease-out;
+      }
     }
+    .cardUnvisible{
+      display:none;
+    }
+  }
+  // .moreActivitiesBtn{
+  //   width:150px;
+  //   height:40px;
+  //   display:flex;
+  //   align-self: center;
+  //   justify-content: center;
+  //   align-items: center;
+  //   background-color:transparent;
+  //   border-radius: 20px;
+  //   cursor: pointer;
+  //   border:2px solid black;
+  //   font-size:18px;
+  //   color: #a0cadf;
+  //   -webkit-box-shadow: 10px 10px 44px 0px rgba(160,202,223,1);
+  //   -moz-box-shadow: 10px 10px 44px 0px rgba(160,202,223,1);
+  //   box-shadow: 10px 10px 44px 0px rgba(160,202,223,1);
+  //   &:hover{
+  //     transform:scale(1.1);
+  //     transition: .2s ease-out;
+  //     border-radius: 15px;
+  //   }
+  //   &:focus, &:active{
+  //     outline: none;
+  //   }
+  // }
+  .moreActivities{
+    display:flex;
+    align-self: center;
+    font-size:80px;
+    color:#a0cadf;
+    cursor: pointer;
+  }
+}
+.changeHeight{
+  height:230vh;
+  transition: .6s ease-out;
+}
+.visible{
+  display:block !important;
+}
+.rotateArrow{
+  transform:rotate(180deg);
+  transition: .4s ease-out;
 }
 @media (min-aspect-ratio: 16/9) {
   .first {
