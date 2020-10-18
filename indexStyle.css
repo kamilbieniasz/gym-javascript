@@ -1,4 +1,8 @@
 @charset "UTF-8";
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -48,8 +52,12 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  color: white;
   font-size: 25px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: white;
 }
 
 .videoContainer {
@@ -75,6 +83,80 @@ body {
   min-width: 100%;
   min-height: 100%;
   z-index: -1;
+}
+
+.videoContainer a {
+  cursor: pointer;
+}
+
+.videoContainer a .mouse {
+  position: absolute;
+  width: 22px;
+  height: 42px;
+  bottom: 40px;
+  left: 50%;
+  margin-left: -12px;
+  border-radius: 15px;
+  border: 2px solid white;
+  -webkit-animation: intro 1s;
+          animation: intro 1s;
+}
+
+.videoContainer a .mouse .scroll {
+  display: block;
+  width: 3px;
+  height: 3px;
+  margin: 6px auto;
+  border-radius: 4px;
+  background: white;
+  -webkit-animation: finger 1s infinite;
+          animation: finger 1s infinite;
+}
+
+@-webkit-keyframes intro {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-40px);
+            transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transfrom: translateY(0);
+  }
+}
+
+@keyframes intro {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateY(-40px);
+            transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transfrom: translateY(0);
+  }
+}
+
+@-webkit-keyframes finger {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
+}
+
+@keyframes finger {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    -webkit-transform: translateY(20px);
+            transform: translateY(20px);
+  }
 }
 
 .aboutUs {
@@ -303,6 +385,7 @@ body {
       justify-content: space-around;
   -webkit-transition: .4s ease-out;
   transition: .4s ease-out;
+  position: relative;
 }
 
 .groupClasses .title {
@@ -405,15 +488,33 @@ body {
   display: none;
 }
 
-.groupClasses .moreActivities {
+.groupClasses .moreActivitiesBtn {
+  width: 150px;
+  height: 40px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -ms-flex-item-align: center;
       align-self: center;
-  font-size: 80px;
-  color: #a0cadf;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #a0cadf;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  border: none;
   cursor: pointer;
+  font-size: 18px;
+  color: white;
+  -webkit-box-shadow: 10px 10px 44px 0px #a0cadf;
+  box-shadow: 10px 10px 44px 0px #a0cadf;
+}
+
+.groupClasses .moreActivitiesBtn:focus, .groupClasses .moreActivitiesBtn:active {
+  outline: none;
 }
 
 .third {
@@ -761,8 +862,8 @@ body {
 }
 
 .rotateArrow {
-  transform: rotate(180deg);
   -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
   -webkit-transition: -webkit-transform .4s ease-out;
   transition: -webkit-transform .4s ease-out;
   transition: transform .4s ease-out;

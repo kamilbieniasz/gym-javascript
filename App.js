@@ -1,4 +1,4 @@
-const moreActivities = document.querySelector('.moreActivities');
+const moreActivitiesBtn = document.querySelector('.moreActivitiesBtn');
 const groupClasses = document.querySelector('.groupClasses');
 const cardUnvisible = document.querySelectorAll('.cardUnvisible');
 const cities = document.querySelectorAll('.cities');
@@ -6,7 +6,7 @@ const maps = document.querySelectorAll('.map');
 
 console.log(cities);
 
-moreActivities.addEventListener("click",() =>{
+moreActivitiesBtn.addEventListener("click",() =>{
     expand();
 });
 
@@ -14,7 +14,6 @@ cities.forEach((city, key)=>{
     city.addEventListener("click", () =>{
         hiddenMap();
         showMap(key);
-        //maps[key].classList.add('showMap');
     });
 });
 
@@ -24,7 +23,8 @@ const expand = () => {
     cardUnvisible.forEach((card) =>{
         card.classList.toggle('visible');
     })
-    moreActivities.classList.toggle('rotateArrow');
+    moreActivitiesBtn.textContent = moreActivitiesBtn.textContent === "Rozwiń" ? "Zwiń" : "Rozwiń";
+    console.log(moreActivitiesBtn.textContent);
 }
 
 const showMap = (key) => {

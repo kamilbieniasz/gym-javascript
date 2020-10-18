@@ -15,19 +15,25 @@
   <body>
     <nav class="navbar">
       <ul>
-        <li class="aboutUsNavbar">O nas</li>
-        <li class="priceListNavbar">Cennik</li>
-        <li class="groupClassesNavbar">Zajęcia grupowe</li>
-        <li class="personalTrainingNavbar">Trening personalny</li>
-        <li class="contactNavbar">Kontakt</li>
+        <li class="aboutUsNavbar"><a href="#aboutUs">O nas</a></li>
+        <li class="priceListNavbar"><a href="#priceList">Cennik</a></li>
+        <li class="groupClassesNavbar"><a href="#groupClasses">Zajęcia grupowe</a></li>
+        <li class="personalTrainingNavbar"><a href="#personalTraining">Trening personalny</a></li>
+        <li class="contactNavbar"><a href="#contact">Kontakt</a></li>
       </ul>
     </nav>
     <section class="videoContainer">
       <video autoplay loop muted>
         <source src="movies/backgroundVideo.mp4" />
+        </span>
       </video>
+      <a href="#aboutUs">
+        <span class="mouse">
+          <span class="scroll"></span>
+        </span>
+      </a>
     </section>
-    <section class="aboutUs">
+    <section id="aboutUs" class="aboutUs">
       <div class="container">
         <div class="infoContainer">
           <h1 class="title">Dostęp 24/7</h1>
@@ -87,7 +93,7 @@
       </div>
     </section>
     <div class="spaceParallax first"></div>
-    <section class="priceList">
+    <section id="priceList" class="priceList">
       <h1 class="sectionName">Karnety</h1>
             <div class="card">
                 <span class="title">Open</span>
@@ -147,7 +153,7 @@
         </div>
     </section>
     <div class="spaceParallax second"></div>
-    <section class="groupClasses">
+    <section id="groupClasses" class="groupClasses">
       <h1 class="title">Zajęcia grupowe</h1>
       <div class="cardContainer">
         <div class="card">
@@ -203,11 +209,12 @@
           <h2 class="titleCard">Crossfit</h2>
         </div>
       </div>
-      <!-- <button class="moreActivitiesBtn">Zobacz więcej</button> -->
-      <i class="fas fa-arrow-down moreActivities"></i>
+      <button class="moreActivitiesBtn">Rozwiń</button>
+      
+      <!-- <i class="fas fa-arrow-down moreActivities"></i> -->
     </section>
     <div class="spaceParallax third"></div>
-    <section class="personalTraining">
+    <section id="personalTraining" class="personalTraining">
       <h1 class="title">Trening personalny</h1>
       <div class="worth">
         <span class="left">
@@ -251,7 +258,7 @@
       </div>
     </section>
     <div class="spaceParallax fourth"></div>
-    <section class="contact">
+    <section id="contact" class="contact">
       <h1 class="title">
         Informacje kontaktowe:
       </h1>
