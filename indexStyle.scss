@@ -38,13 +38,13 @@ body {
 }
 .videoContainer {
   width: 100vw;
-  height: 50vh;
+  height: 100vh;
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  position:relative;
   video {
     position: absolute;
     top: 0;
@@ -133,10 +133,6 @@ body {
         z-index:2;
       }
     }
-  }
-  .space {
-    width: 100vw;
-    height: 30vh;
   }
 }
 .first{
@@ -593,6 +589,10 @@ body {
       flex-direction: column;
     }
   }
+  .videoContainer{
+    
+    height:50vh;
+  }
   .aboutUs{
     .container{
       flex-direction: column;
@@ -613,9 +613,6 @@ body {
         }
       }
     }
-    .space{
-      height:0;
-    }
   }
   .priceList{
     .cardContainer{
@@ -624,7 +621,7 @@ body {
       
       .card{
         width:70vw;
-        height:65vh;
+        height:70vh;
         font-size:30px;
         margin: 40px 0;
       &:not(:first-child){
@@ -637,16 +634,16 @@ body {
       }
       ul{
         li{
-          padding:10px 0;
+          padding:5px 0;
         }
       }
       .title{
-        font-size:60px;
+        font-size:50px;
       }
       .buyBtn{
         width:150px;
-        height:45px;
-        font-size:30px;
+        height:50px;
+        font-size:45px;
       }
     }
     }

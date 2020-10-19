@@ -62,7 +62,7 @@ body {
 
 .videoContainer {
   width: 100vw;
-  height: 50vh;
+  height: 100vh;
   margin: 0;
   padding: 0;
   display: -webkit-box;
@@ -223,11 +223,6 @@ body {
 .aboutUs .container .infoContainer .icon {
   font-size: 80px;
   z-index: 2;
-}
-
-.aboutUs .space {
-  width: 100vw;
-  height: 30vh;
 }
 
 .first {
@@ -900,6 +895,9 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+  .videoContainer {
+    height: 50vh;
+  }
   .aboutUs .container {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -926,9 +924,6 @@ body {
     padding: 20px;
     font-size: 30px;
   }
-  .aboutUs .space {
-    height: 0;
-  }
   .priceList .cardContainer {
     display: inline-block;
     -webkit-box-orient: vertical;
@@ -938,7 +933,7 @@ body {
   }
   .priceList .cardContainer .card {
     width: 70vw;
-    height: 65vh;
+    height: 70vh;
     font-size: 30px;
     margin: 40px 0;
   }
@@ -953,15 +948,15 @@ body {
     transition: 0;
   }
   .priceList .cardContainer .card ul li {
-    padding: 10px 0;
+    padding: 5px 0;
   }
   .priceList .cardContainer .card .title {
-    font-size: 60px;
+    font-size: 50px;
   }
   .priceList .cardContainer .card .buyBtn {
     width: 150px;
-    height: 45px;
-    font-size: 30px;
+    height: 50px;
+    font-size: 45px;
   }
 }
 /*# sourceMappingURL=indexStyle.css.map */
