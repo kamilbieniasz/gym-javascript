@@ -45,12 +45,19 @@ body {
   justify-content: center;
   align-items: center;
   video {
-    position: fixed;
+    // position: relative;
+    // right: 0;
+    // bottom: 0;
+    // min-width: 100%;
+    // min-height: 100%;
+    // z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
     right: 0;
     bottom: 0;
-    min-width: 100%;
-    min-height: 100%;
-    z-index: -1;
+    height: auto;
+    width: 100%;
   }
   a{
     cursor: pointer;
@@ -99,7 +106,7 @@ body {
   width: 100vw;
   .container {
     width: 100vw;
-    height:70vh;
+    min-height:70vh;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -141,7 +148,7 @@ body {
   background-image: url("./images/parallax1.jpg");
 }
 .spaceParallax{
-    height:60vh;
+    min-height:60vh;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -149,20 +156,21 @@ body {
 }
 .priceList {
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   background-color: white;
   display:flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
   position: relative;
   color:white;
 
   .sectionName{
     padding:20px 40px;
+    width:fit-content;
+    height:fit-content;
     display:flex;
     justify-content: center;
-    position:absolute;
-    top:0;
     font-size:80px;
     border-top-right-radius: 20px;
     border-bottom-left-radius: 20px;
@@ -171,6 +179,8 @@ body {
     -moz-box-shadow: 10px 10px 44px 0px rgba(160,202,223,1);
     box-shadow: 10px 10px 44px 0px rgba(160,202,223,1);
   }
+  .cardContainer{
+    display:flex;
     .card{
         display: flex;
         flex-direction: column;
@@ -233,6 +243,7 @@ body {
           }
         }
     }
+  }
 }
 .second{
   background-image: url("./images/parallax2.jpg");
@@ -240,7 +251,7 @@ body {
 .groupClasses{
   background-color:white;
   width:100vw;
-  height:100vh;
+  min-height:100vh;
   display:flex;
   flex-direction: column;
   justify-content: space-around;
@@ -267,6 +278,7 @@ body {
     display:flex;
     justify-content: space-evenly;
     align-items: center;
+    margin: 20px 0;
     .card{
       width:300px;
       height:450px;
@@ -326,6 +338,7 @@ body {
     border-top-right-radius: 15px;
     border-bottom-left-radius: 15px;
     border:none;
+    margin-bottom:20px;
     cursor: pointer;
     font-size:18px;
     color: white;
@@ -336,21 +349,14 @@ body {
       outline: none;
     }
   }
-  // .moreActivities{
-  //   display:flex;
-  //   align-self: center;
-  //   font-size:80px;
-  //   color:#a0cadf;
-  //   cursor: pointer;
-  // }
-
 }
 .third{
   background-image: url("./images/parallax3.jpg");
 }
 .personalTraining{
   width:100vw;
-  height:100vh;
+  min-height:100vh;
+  padding:20px 0;
   background-color: white;
   display:flex;
   flex-direction: column;
@@ -373,6 +379,7 @@ body {
     width:100vw;
     display:flex;
     justify-content: space-evenly;
+    padding:20px 0;
     .left{
       width:40vw;
       height:40vh;
@@ -415,6 +422,7 @@ body {
     display:flex;
     justify-content: space-evenly;
     margin: 40px 0 0 0;
+    padding:20px;
     .card{
       width:200px;
       height:200px;
@@ -446,12 +454,13 @@ body {
 }
 .contact{
   width:100vw;
-  height:100vh;
+  min-height:100vh;
   background-color: white;
   display:flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
+  padding:20px 0;
   
   .title{
     width:fit-content;
@@ -552,33 +561,36 @@ body {
   box-shadow: 16px 15px 10px 4px rgba(192, 201, 207, 1);
 }
 .changeHeight{
-  height:230vh;
+  min-height:230vh;
   transition: .6s ease-out;
 }
 .visible{
   display:block !important;
 }
-.rotateArrow{
-  transform:rotate(180deg);
-  transition:transform .4s ease-out;
-}
 .showMap{
   display:block;
   transition: .2s ease-out;
 }
-@media (min-aspect-ratio: 16/9) {
-  .first {
-    video {
-      width: 100%;
-      height: auto;
-    }
-  }
-}
-@media (max-aspect-ratio: 16/9) {
-  .first {
-    video {
-      width: auto;
-      height: 100%;
+// @media (min-aspect-ratio: 16/9) {
+//   .first {
+//     video {
+//       width: 100vw;
+//       height: auto;
+//     }
+//   }
+// }
+// @media (max-aspect-ratio: 16/9) {
+//   .first {
+//     video {
+//       width: auto;
+//       height: 100vh;
+//     }
+//   }
+// }
+@media screen and(max-width:1000px){
+  .first{
+    video{
+      width:100px;
     }
   }
 }
