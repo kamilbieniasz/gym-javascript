@@ -890,24 +890,10 @@ body {
   transition: 0.2s ease-out;
 }
 
-@media (min-aspect-ratio: 16 / 9) {
-  .first video {
-    width: 100vw;
-    height: auto;
-  }
-}
-
-@media (max-aspect-ratio: 16 / 9) {
-  .first video {
-    width: auto;
-    height: 100vh;
-  }
-}
-
 @media screen and (max-width: 900px) and (min-width: 401px), screen and (max-width: 400px) {
   .square {
-    width: 100px;
-    height: 200px;
+    width: 0;
+    height: 0;
   }
   .navbar ul {
     -webkit-box-orient: vertical;
@@ -1053,7 +1039,7 @@ body {
     font-size: 60px;
   }
   .personalTraining .qualifications .card .icon, .personalTraining .qualifications .card p {
-    font-size: 20px;
+    font-size: 25px;
   }
   .contact .title {
     font-size: 23px;
@@ -1131,7 +1117,7 @@ body {
   }
   .personalTraining .qualifications .card .icon,
   .personalTraining .qualifications .card p {
-    font-size: 25px;
+    font-size: 20px;
   }
   .contact .mapContainer .maps .map {
     width: 300px;
