@@ -15,7 +15,7 @@ body {
   height: 8vh;
   position: -webkit-sticky;
   position: sticky;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: #a0cadf;
   top: 0;
   z-index: 3;
   display: -webkit-box;
@@ -63,7 +63,7 @@ body {
 
 .videoContainer {
   width: 100vw;
-  height: 100vh;
+  height: 90vh;
   margin: 0;
   padding: 0;
   display: -webkit-box;
@@ -75,6 +75,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  top: 0;
   position: relative;
 }
 
@@ -82,8 +83,6 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  bottom: 0;
   height: auto;
   width: 100%;
 }
@@ -96,7 +95,7 @@ body {
   position: absolute;
   width: 22px;
   height: 42px;
-  bottom: 40px;
+  bottom: 20px;
   left: 50%;
   margin-left: -12px;
   border-radius: 15px;
@@ -164,6 +163,7 @@ body {
 
 .aboutUs {
   width: 100vw;
+  padding: 80px 0;
 }
 
 .aboutUs .container {
@@ -460,8 +460,7 @@ body {
 }
 
 .groupClasses .cardContainer .card .titleCard {
-  width: 50%;
-  height: 40px;
+  padding: 5px 20px;
   margin: 0;
   color: #a0cadf;
   background-color: white;
@@ -811,7 +810,6 @@ body {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  color: white;
   font-size: 25px;
   -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
@@ -827,6 +825,11 @@ body {
           transform: scale(1.2);
   -webkit-transition: 0.2s ease-out;
   transition: 0.2s ease-out;
+}
+
+.contact .mapContainer .citiesContainer ul li a {
+  color: white;
+  text-decoration: none;
 }
 
 .contact .mapContainer .maps {
@@ -887,6 +890,20 @@ body {
   transition: 0.2s ease-out;
 }
 
+@media (min-aspect-ratio: 16 / 9) {
+  .first video {
+    width: 100vw;
+    height: auto;
+  }
+}
+
+@media (max-aspect-ratio: 16 / 9) {
+  .first video {
+    width: auto;
+    height: 100vh;
+  }
+}
+
 @media screen and (max-width: 900px) and (min-width: 401px), screen and (max-width: 400px) {
   .square {
     width: 100px;
@@ -900,6 +917,9 @@ body {
   }
   .videoContainer {
     height: 50vh;
+  }
+  .aboutUs {
+    padding: 0;
   }
   .aboutUs .container {
     -webkit-box-orient: vertical;
@@ -1079,6 +1099,7 @@ body {
     height: 75vh;
     font-size: 15px;
     margin: 40px 0;
+    padding: 20px 40px;
   }
   .priceList .cardContainer .card:not(:first-child) {
     margin-left: 0;
