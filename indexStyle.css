@@ -1,6 +1,7 @@
 @charset "UTF-8";
 html {
   scroll-behavior: smooth;
+  width: 100vw;
 }
 
 body {
@@ -316,16 +317,16 @@ body {
 .priceList .cardContainer .card:hover {
   -webkit-transform: translateY(-20px);
           transform: translateY(-20px);
-  -webkit-transition: .4s ease-out;
-  transition: .4s ease-out;
+  -webkit-transition: 0.4s ease-out;
+  transition: 0.4s ease-out;
 }
 
 .priceList .cardContainer .card:hover ~ .card {
   position: relative;
   -webkit-transform: translateX(80px);
           transform: translateX(80px);
-  -webkit-transition: .4s ease-out;
-  transition: .4s ease-out;
+  -webkit-transition: 0.4s ease-out;
+  transition: 0.4s ease-out;
 }
 
 .priceList .cardContainer .card .title {
@@ -351,7 +352,7 @@ body {
 }
 
 .priceList .cardContainer .card ul li:before {
-  content: '✓ ';
+  content: "✓ ";
 }
 
 .priceList .cardContainer .card .buyBtn {
@@ -369,8 +370,8 @@ body {
 .priceList .cardContainer .card .buyBtn:hover {
   background-color: #a0cadf !important;
   color: white !important;
-  -webkit-transition: .4s ease-out;
-  transition: .4s ease-out;
+  -webkit-transition: 0.4s ease-out;
+  transition: 0.4s ease-out;
 }
 
 .priceList .cardContainer .card .buyBtn:focus, .priceList .cardContainer .card .buyBtn:active {
@@ -394,8 +395,8 @@ body {
           flex-direction: column;
   -ms-flex-pack: distribute;
       justify-content: space-around;
-  -webkit-transition: .4s ease-out;
-  transition: .4s ease-out;
+  -webkit-transition: 0.4s ease-out;
+  transition: 0.4s ease-out;
   position: relative;
 }
 
@@ -442,14 +443,14 @@ body {
   border: 2px solid black;
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
-  -webkit-transition: .2s ease-out;
-  transition: .2s ease-out;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
   position: relative;
   -webkit-box-shadow: 10px 10px 44px 0px #a0cadf;
   box-shadow: 10px 10px 44px 0px #a0cadf;
 }
 
-.groupClasses .cardContainer .card .zumba {
+.groupClasses .cardContainer .card img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -478,22 +479,22 @@ body {
           align-items: center;
   -webkit-box-shadow: 10px 10px 44px 0px #a0cadf;
   box-shadow: 10px 10px 44px 0px #a0cadf;
-  -webkit-transition: .2s ease-out;
-  transition: .2s ease-out;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
 }
 
 .groupClasses .cardContainer .card:hover {
   -webkit-transform: scale(1.05);
           transform: scale(1.05);
-  -webkit-transition: .2s ease-out;
-  transition: .2s ease-out;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
 }
 
 .groupClasses .cardContainer .card:hover .titleCard {
   -webkit-transform: translateX(-5%);
           transform: translateX(-5%);
-  -webkit-transition: .2s ease-out;
-  transition: .2s ease-out;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
 }
 
 .groupClasses .cardContainer .cardUnvisible {
@@ -600,7 +601,8 @@ body {
   font-size: 20px;
 }
 
-.personalTraining .worth .left h1, .personalTraining .worth .left ul {
+.personalTraining .worth .left h1,
+.personalTraining .worth .left ul {
   z-index: 2;
 }
 
@@ -609,7 +611,7 @@ body {
 }
 
 .personalTraining .worth .left ul li:before {
-  content: '- ';
+  content: "- ";
 }
 
 .personalTraining .worth .right {
@@ -632,7 +634,8 @@ body {
   font-size: 20px;
 }
 
-.personalTraining .worth .right h1, .personalTraining .worth .right p {
+.personalTraining .worth .right h1,
+.personalTraining .worth .right p {
   z-index: 2;
 }
 
@@ -719,7 +722,7 @@ body {
   height: -moz-fit-content;
   height: fit-content;
   margin: 0;
-  font-size: 80px;
+  font-size: 70px;
   color: white;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -787,8 +790,8 @@ body {
 .contact .mapContainer .citiesContainer ul {
   list-style-type: none;
   cursor: pointer;
-  -webkit-transition: .2s ease-out;
-  transition: .2s ease-out;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
 }
 
 .contact .mapContainer .citiesContainer ul li {
@@ -810,8 +813,8 @@ body {
           user-select: none;
   color: white;
   font-size: 25px;
-  -webkit-transition: .2s ease-out;
-  transition: .2s ease-out;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
   border-top-right-radius: 20px;
   border-bottom-left-radius: 20px;
   background-color: #a0cadf;
@@ -822,8 +825,8 @@ body {
 .contact .mapContainer .citiesContainer ul li:hover {
   -webkit-transform: scale(1.2);
           transform: scale(1.2);
-  -webkit-transition: .2s ease-out;
-  transition: .2s ease-out;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
 }
 
 .contact .mapContainer .maps {
@@ -870,8 +873,8 @@ body {
 
 .changeHeight {
   min-height: 230vh;
-  -webkit-transition: .6s ease-out;
-  transition: .6s ease-out;
+  -webkit-transition: 0.6s ease-out;
+  transition: 0.6s ease-out;
 }
 
 .visible {
@@ -880,14 +883,14 @@ body {
 
 .showMap {
   display: block;
-  -webkit-transition: .2s ease-out;
-  transition: .2s ease-out;
+  -webkit-transition: 0.2s ease-out;
+  transition: 0.2s ease-out;
 }
 
-@media only screen and (max-width: 900px) {
+@media screen and (max-width: 900px) and (min-width: 401px), screen and (max-width: 400px) {
   .square {
-    width: 300px;
-    height: 300px;
+    width: 100px;
+    height: 200px;
   }
   .navbar ul {
     -webkit-box-orient: vertical;
@@ -911,10 +914,10 @@ body {
             align-items: center;
   }
   .aboutUs .container .infoContainer {
-    padding: 80px 0;
+    padding: 40px 0;
   }
   .aboutUs .container .infoContainer .title {
-    font-size: 60px;
+    font-size: 30px;
   }
   .aboutUs .container .infoContainer .descriptionContainer {
     width: 100vw;
@@ -922,7 +925,10 @@ body {
   .aboutUs .container .infoContainer .descriptionContainer .description {
     width: 100%;
     padding: 20px;
-    font-size: 30px;
+    font-size: 20px;
+  }
+  .priceList .sectionName {
+    font-size: 35px;
   }
   .priceList .cardContainer {
     display: inline-block;
@@ -932,10 +938,14 @@ body {
             flex-direction: column;
   }
   .priceList .cardContainer .card {
-    width: 70vw;
-    height: 70vh;
-    font-size: 30px;
+    width: 80vw;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    min-height: 50vh;
+    font-size: 20px;
     margin: 40px 0;
+    padding: 60px 20px;
   }
   .priceList .cardContainer .card:not(:first-child) {
     margin-left: 0;
@@ -956,7 +966,155 @@ body {
   .priceList .cardContainer .card .buyBtn {
     width: 150px;
     height: 50px;
-    font-size: 45px;
+    font-size: 35px;
+  }
+  .groupClasses .title {
+    font-size: 25px;
+  }
+  .groupClasses .cardContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .groupClasses .cardContainer .card {
+    width: 200px;
+    height: 350px;
+    margin: 20px 0;
+  }
+  .personalTraining .title {
+    font-size: 28px;
+  }
+  .personalTraining .worth {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: space-between;
+        -ms-flex-align: space-between;
+            align-items: space-between;
+  }
+  .personalTraining .worth .left {
+    width: 80vw;
+    height: 35vh;
+    font-size: 18px;
+    margin: 180px 0;
+  }
+  .personalTraining .worth .left ul li {
+    padding: 5px 0;
+  }
+  .personalTraining .worth .right {
+    width: 80vw;
+    font-size: 18px;
+  }
+  .personalTraining .worth .right p {
+    text-align: center;
+  }
+  .personalTraining .qualifications {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 0;
+  }
+  .personalTraining .qualifications .card {
+    margin: 40px 0;
+    width: 350px;
+    height: 350px;
+    font-size: 60px;
+  }
+  .personalTraining .qualifications .card .icon, .personalTraining .qualifications .card p {
+    font-size: 20px;
+  }
+  .contact .title {
+    font-size: 23px;
+  }
+  .contact .mapContainer {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .contact .mapContainer .citiesContainer ul {
+    padding: 0;
+  }
+  .contact .mapContainer .citiesContainer ul li {
+    padding: 0;
+  }
+  .contact .mapContainer .citiesContainer ul li a {
+    width: 100%;
+    height: 100%;
+    padding: 20px 40px;
+    text-decoration: none;
+    color: white;
+  }
+  .contact .mapContainer .maps .map {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .square {
+    width: 0;
+    height: 0;
+  }
+  .priceList .cardContainer {
+    display: inline-block;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .priceList .cardContainer .card {
+    width: 70vw;
+    height: 75vh;
+    font-size: 15px;
+    margin: 40px 0;
+  }
+  .priceList .cardContainer .card:not(:first-child) {
+    margin-left: 0;
+  }
+  .priceList .cardContainer .card:hover ~ .card {
+    position: relative;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    -webkit-transition: 0;
+    transition: 0;
+  }
+  .priceList .cardContainer .card ul {
+    margin: 10px 0;
+  }
+  .priceList .cardContainer .card ul li {
+    padding: 5px 0;
+  }
+  .priceList .cardContainer .card .title {
+    font-size: 50px;
+  }
+  .priceList .cardContainer .card .buyBtn {
+    width: 100px;
+    height: 50px;
+    font-size: 30px;
+  }
+  .personalTraining .qualifications .card {
+    width: 200px;
+    height: 200px;
+  }
+  .personalTraining .qualifications .card .icon,
+  .personalTraining .qualifications .card p {
+    font-size: 25px;
+  }
+  .contact .mapContainer .maps .map {
+    width: 300px;
+    height: 400px;
   }
 }
 /*# sourceMappingURL=indexStyle.css.map */
