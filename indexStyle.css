@@ -35,7 +35,7 @@ body {
 .hamburgerBtnContainer .hamburgerBtnInner .hamburgerBtnLine {
   width: 100%;
   height: 3px;
-  background: black;
+  background: #4EA5CF;
   position: absolute;
   z-index: 0;
   left: 0;
@@ -47,7 +47,7 @@ body {
 .hamburgerBtnContainer .hamburgerBtnInner .hamburgerBtnLine:before, .hamburgerBtnContainer .hamburgerBtnInner .hamburgerBtnLine:after {
   width: 100%;
   height: 3px;
-  background: black;
+  background: #4EA5CF;
   position: absolute;
   z-index: 0;
   content: "";
@@ -1033,6 +1033,10 @@ body {
   }
   .priceList .cardContainer .passCard:not(:first-child) {
     margin-left: 0;
+  }
+  .priceList .cardContainer .passCard:hover {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
   .priceList .cardContainer .passCard ul {
     display: none;
