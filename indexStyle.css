@@ -1202,6 +1202,9 @@ body {
   .personalTraining .qualifications .card p {
     font-size: 20px;
   }
+  .contact .title {
+    padding: 20px 40px;
+  }
   .contact .mapContainer .maps .map {
     width: 300px;
     height: 400px;
