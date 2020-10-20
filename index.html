@@ -16,6 +16,11 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
   </head>
   <body>
+    <button class="hamburgerBtnContainer">
+      <span class="hamburgerBtnInner">
+        <span class="hamburgerBtnLine"></span>
+      </span>
+    </button>
     <nav class="navbar">
       <ul>
         <li class="aboutUsNavbar"><a href="#aboutUs">O nas</a></li>
@@ -102,9 +107,10 @@
     <section id="priceList" class="priceList">
       <h1 class="sectionName">Karnety</h1>
       <div class="cardContainer">
-        <div class="card">
+        <div class="passCard">
           <span class="title">Open</span>
-          <ul>
+          <Label class="expand">Rozwiń</Label>
+          <ul class="passInfo">
             <li>wejście o każdej porze</li>
             <li>nieograniczona ilość wejść</li>
             <li>nieograniczony czas spędzany na siłowni</li>
@@ -112,30 +118,30 @@
             <li>darmowy jeden trening z trenerem personalnym</li>
             <li>karnet ważny miesiąc</li>
           </ul>
-          <button class="buyBtn">Kup</button>
         </div>
-        <div class="card">
+        <div class="passCard">
           <span class="title">8 wejść</span>
-          <ul>
+          <Label class="expand">Rozwiń</Label>
+          <ul class="passInfo">
             <li>wejście o każdej porze</li>
             <li>nieograniczony czas spędzany na siłowni</li>
             <li>karnet ważny przez 3 miesiące</li>
           </ul>
-          <button class="buyBtn">Kup</button>
         </div>
-        <div class="card">
+        <div class="passCard">
           <span class="title">16 wejść</span>
-          <ul>
+          <label class="expand">Rozwiń</label>
+          <ul class="passInfo">
             <li>wejście o każdej porze</li>
             <li>nieograniczony czas spędzany na siłowni</li>
             <li>darmowa sauna</li>
             <li>karnet ważny przez 6 miesięcy</li>
           </ul>
-          <button class="buyBtn">Kup</button>
         </div>
-        <div class="card">
+        <div class="passCard">
           <span class="title">Poranny</span>
-          <ul>
+          <label class="expand">Rozwiń</label>
+          <ul class="passInfo">
             <li>wejście do godziny 12:00</li>
             <li>nieograniczona ilość wejść</li>
             <li>nieograniczony czas spędzany na siłowni</li>
@@ -143,11 +149,11 @@
             <li>darmowy jeden trening z trenerem personalnym</li>
             <li>karnet ważny miesiąc</li>
           </ul>
-          <button class="buyBtn">Kup</button>
         </div>
-        <div class="card">
+        <div class="passCard">
           <span class="title">Roczny</span>
-          <ul>
+          <label class="expand">Rozwiń</label>
+          <ul class="passInfo">
             <li>wejście o każdej porze</li>
             <li>nieograniczona ilość wejść</li>
             <li>nieograniczony czas spędzany na siłowni</li>
@@ -156,7 +162,6 @@
             <li>darmowe rozpisanie diety</li>
             <li>karnet ważny rok</li>
           </ul>
-          <button class="buyBtn">Kup</button>
         </div>
       </div>
     </section>

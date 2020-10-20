@@ -1,22 +1,73 @@
 html {
   scroll-behavior: smooth;
-  width:100vw;
+  width: 100vw;
 }
 body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
 }
+.hamburgerBtnContainer {
+  padding: 10px 5px 0 5px;
+  display: inline-block;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  z-index: 100;
+  position:fixed;
+  top:5px;
+  left:5px;
+  display: none;
+  outline: none;
+  .hamburgerBtnInner {
+    width: 35px;
+    height: 20px;
+    display: inline-block;
+    position: relative;
+
+    @mixin hamburgerBarStyle {
+      width: 100%;
+      height: 3px;
+      background: black;
+      position: absolute;
+      z-index: 0;
+    }
+
+    .hamburgerBtnLine {
+      @include hamburgerBarStyle;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+
+      &:before,
+      &:after {
+        @include hamburgerBarStyle;
+        content: "";
+        left: 0;
+        transition: transform 0.2s ease-in-out;
+      }
+      &:before {
+        top: -10px;
+      }
+      &:after {
+        top: 10px;
+      }
+    }
+  }
+}
 .navbar {
   width: 100vw;
   height: 8vh;
   position: sticky;
-  background-color:#a0cadf;
+  background-color: #a0cadf;
   top: 0;
   z-index: 3;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  
   ul {
     display: flex;
     justify-content: center;
@@ -49,8 +100,8 @@ body {
   position: relative;
   video {
     position: absolute;
-    top:0;
-    left:0;
+    top: 0;
+    left: 0;
     height: auto;
     width: 100%;
   }
@@ -172,7 +223,7 @@ body {
   }
   .cardContainer {
     display: flex;
-    .card {
+    .passCard {
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -201,6 +252,9 @@ body {
         font-size: 40px;
         margin-top: 20px;
       }
+      .expand {
+        display: none;
+      }
       ul {
         display: flex;
         flex-direction: column;
@@ -210,27 +264,6 @@ body {
         margin-top: 50px;
         li:before {
           content: "✓ ";
-        }
-      }
-      .buyBtn {
-        width: 100px;
-        height: 40px;
-        border: 2px solid white;
-        color: white;
-        background-color: transparent;
-        border-radius: 20px;
-        position: absolute;
-        bottom: 5%;
-        cursor: pointer;
-        &:hover {
-          background-color: #a0cadf !important;
-          color: white !important;
-          transition: 0.4s ease-out;
-        }
-
-        &:focus,
-        &:active {
-          outline: none;
         }
       }
     }
@@ -289,7 +322,7 @@ body {
         border-bottom-left-radius: 20px;
       }
       .titleCard {
-        padding:5px 20px;
+        padding: 5px 20px;
         margin: 0;
         color: #a0cadf;
         background-color: white;
@@ -516,8 +549,8 @@ body {
             transform: scale(1.2);
             transition: 0.2s ease-out;
           }
-          a{
-            color:white;
+          a {
+            color: white;
             text-decoration: none;
           }
         }
@@ -565,6 +598,25 @@ body {
   display: block;
   transition: 0.2s ease-out;
 }
+.showMenu{
+  transform: translateX(100vw);
+  transition: .1s ease-in-out;
+}
+.hamburgerBtnActive .hamburgerBtnLine{
+  background: transparent !important;
+}
+.hamburgerBtnActive .hamburgerBtnLine::before{
+  background: transparent !important;
+  background-color:white !important;
+  transform: translateY(10px) rotate(45deg);
+  transition: transform .2s ease-in-out
+}
+.hamburgerBtnActive .hamburgerBtnLine::after{
+  background: transparent !important;
+  background-color:white !important;
+  transform: translateY(-10px) rotate(-45deg);
+  transition: transform .2s ease-in-out
+}
 // @media (min-aspect-ratio: 16/9) {
 //   .first {
 //     video {
@@ -587,7 +639,16 @@ body {
     width: 0;
     height: 0;
   }
+  .hamburgerBtnContainer{
+    display:block;
+  }
   .navbar {
+    left:-100vw;
+    height: fit-content;
+    display: flex;
+    top: 0;
+    position: fixed;
+    transition: .1s ease-in-out;
     ul {
       flex-direction: column;
     }
@@ -596,7 +657,7 @@ body {
     height: 50vh;
   }
   .aboutUs {
-    padding:0;
+    
     .container {
       flex-direction: column;
       justify-content: center;
@@ -604,13 +665,15 @@ body {
       .infoContainer {
         padding: 40px 0;
         .title {
+          width:80vw;
           font-size: 30px;
+          text-align: center;
         }
         .descriptionContainer {
-          width: 100vw;
+          width: 90vw;
           .description {
             width: 100%;
-            padding: 20px;
+            padding: 20px 40px;
             font-size: 20px;
           }
         }
@@ -625,13 +688,12 @@ body {
       display: inline-block;
       flex-direction: column;
 
-      .card {
-        width: 80vw;
+      .passCard {
+        width: 90vw;
         height: fit-content;
-        min-height: 50vh;
         font-size: 20px;
         margin: 40px 0;
-        padding: 60px 20px;
+        transition: 0.4s ease-out;
         &:not(:first-child) {
           margin-left: 0;
         }
@@ -641,14 +703,27 @@ body {
           transition: 0;
         }
         ul {
+          display: none;
           li {
             padding: 5px 0;
           }
         }
         .title {
+          margin-top: 0;
           font-size: 50px;
         }
+        .expand {
+          display: block;
+          background-color: transparent;
+          border: none;
+          color: white;
+          &:focus,
+          &:active {
+            outline: none;
+          }
+        }
         .buyBtn {
+          display: none;
           width: 150px;
           height: 50px;
           font-size: 35px;
@@ -660,14 +735,14 @@ body {
     .title {
       font-size: 25px;
     }
-    .cardContainer{
+    .cardContainer {
       flex-direction: column;
-      .card{
-        width:200px;
-        height:350px;
-        margin:20px 0;
-        img{
-          .titleCard{
+      .card {
+        width: 200px;
+        height: 350px;
+        margin: 20px 0;
+        img {
+          .titleCard {
             //width:
           }
         }
@@ -696,9 +771,9 @@ body {
         }
       }
       .right {
-        width: 80vw;
+        width: 75vw;
         font-size: 18px;
-        p{
+        p {
           text-align: center;
         }
       }
@@ -706,16 +781,16 @@ body {
     .qualifications {
       flex-direction: column;
       align-items: center;
-      padding:0;
+      padding: 0;
       .card {
         margin: 40px 0;
         width: 350px;
         height: 350px;
         font-size: 60px;
-        .icon,p {
+        .icon,
+        p {
           font-size: 25px;
         }
-        
       }
     }
   }
@@ -730,20 +805,20 @@ body {
         ul {
           padding: 0;
           li {
-            padding:0;
+            padding: 0;
             a {
               width: 100%;
               height: 100%;
-              padding:20px 40px;
+              padding: 20px 40px;
               text-decoration: none;
               color: white;
             }
           }
         }
       }
-      .maps{
-        .map{
-          width:400px;
+      .maps {
+        .map {
+          width: 400px;
         }
       }
     }
@@ -760,12 +835,8 @@ body {
       flex-direction: column;
 
       .card {
-        width: 70vw;
-        height: 75vh;
-        
+        height: fit-content;
         font-size: 15px;
-        margin: 40px 0;
-        padding:20px 40px;
         &:not(:first-child) {
           margin-left: 0;
         }
@@ -778,6 +849,7 @@ body {
           margin: 10px 0;
           li {
             padding: 5px 0;
+            font-size: 15px;
           }
         }
         .title {
@@ -803,14 +875,17 @@ body {
       }
     }
   }
-  .contact{
-    .mapContainer{
-      .maps{
-        .map{
-          width:300px;
-          height:400px;
+  .contact {
+    .mapContainer {
+      .maps {
+        .map {
+          width: 300px;
+          height: 400px;
         }
       }
     }
   }
+}
+.showPassInfo {
+  display: flex !important;
 }

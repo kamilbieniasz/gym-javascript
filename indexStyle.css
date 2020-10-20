@@ -10,6 +10,62 @@ body {
   overflow-x: hidden;
 }
 
+.hamburgerBtnContainer {
+  padding: 10px 5px 0 5px;
+  display: inline-block;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  z-index: 100;
+  position: fixed;
+  top: 5px;
+  left: 5px;
+  display: none;
+  outline: none;
+}
+
+.hamburgerBtnContainer .hamburgerBtnInner {
+  width: 35px;
+  height: 20px;
+  display: inline-block;
+  position: relative;
+}
+
+.hamburgerBtnContainer .hamburgerBtnInner .hamburgerBtnLine {
+  width: 100%;
+  height: 3px;
+  background: black;
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.hamburgerBtnContainer .hamburgerBtnInner .hamburgerBtnLine:before, .hamburgerBtnContainer .hamburgerBtnInner .hamburgerBtnLine:after {
+  width: 100%;
+  height: 3px;
+  background: black;
+  position: absolute;
+  z-index: 0;
+  content: "";
+  left: 0;
+  -webkit-transition: -webkit-transform 0.2s ease-in-out;
+  transition: -webkit-transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out, -webkit-transform 0.2s ease-in-out;
+}
+
+.hamburgerBtnContainer .hamburgerBtnInner .hamburgerBtnLine:before {
+  top: -10px;
+}
+
+.hamburgerBtnContainer .hamburgerBtnInner .hamburgerBtnLine:after {
+  top: 10px;
+}
+
 .navbar {
   width: 100vw;
   height: 8vh;
@@ -27,6 +83,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
 }
 
 .navbar ul {
@@ -287,7 +344,7 @@ body {
   display: flex;
 }
 
-.priceList .cardContainer .card {
+.priceList .cardContainer .passCard {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -310,18 +367,18 @@ body {
   left: 0px;
 }
 
-.priceList .cardContainer .card:not(:first-child) {
+.priceList .cardContainer .passCard:not(:first-child) {
   margin-left: -80px;
 }
 
-.priceList .cardContainer .card:hover {
+.priceList .cardContainer .passCard:hover {
   -webkit-transform: translateY(-20px);
           transform: translateY(-20px);
   -webkit-transition: 0.4s ease-out;
   transition: 0.4s ease-out;
 }
 
-.priceList .cardContainer .card:hover ~ .card {
+.priceList .cardContainer .passCard:hover ~ .card {
   position: relative;
   -webkit-transform: translateX(80px);
           transform: translateX(80px);
@@ -329,13 +386,17 @@ body {
   transition: 0.4s ease-out;
 }
 
-.priceList .cardContainer .card .title {
+.priceList .cardContainer .passCard .title {
   color: white;
   font-size: 40px;
   margin-top: 20px;
 }
 
-.priceList .cardContainer .card ul {
+.priceList .cardContainer .passCard .expand {
+  display: none;
+}
+
+.priceList .cardContainer .passCard ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -351,31 +412,8 @@ body {
   margin-top: 50px;
 }
 
-.priceList .cardContainer .card ul li:before {
+.priceList .cardContainer .passCard ul li:before {
   content: "✓ ";
-}
-
-.priceList .cardContainer .card .buyBtn {
-  width: 100px;
-  height: 40px;
-  border: 2px solid white;
-  color: white;
-  background-color: transparent;
-  border-radius: 20px;
-  position: absolute;
-  bottom: 5%;
-  cursor: pointer;
-}
-
-.priceList .cardContainer .card .buyBtn:hover {
-  background-color: #a0cadf !important;
-  color: white !important;
-  -webkit-transition: 0.4s ease-out;
-  transition: 0.4s ease-out;
-}
-
-.priceList .cardContainer .card .buyBtn:focus, .priceList .cardContainer .card .buyBtn:active {
-  outline: none;
 }
 
 .second {
@@ -890,10 +928,59 @@ body {
   transition: 0.2s ease-out;
 }
 
+.showMenu {
+  -webkit-transform: translateX(100vw);
+          transform: translateX(100vw);
+  -webkit-transition: .1s ease-in-out;
+  transition: .1s ease-in-out;
+}
+
+.hamburgerBtnActive .hamburgerBtnLine {
+  background: transparent !important;
+}
+
+.hamburgerBtnActive .hamburgerBtnLine::before {
+  background: transparent !important;
+  background-color: white !important;
+  -webkit-transform: translateY(10px) rotate(45deg);
+          transform: translateY(10px) rotate(45deg);
+  -webkit-transition: -webkit-transform .2s ease-in-out;
+  transition: -webkit-transform .2s ease-in-out;
+  transition: transform .2s ease-in-out;
+  transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
+}
+
+.hamburgerBtnActive .hamburgerBtnLine::after {
+  background: transparent !important;
+  background-color: white !important;
+  -webkit-transform: translateY(-10px) rotate(-45deg);
+          transform: translateY(-10px) rotate(-45deg);
+  -webkit-transition: -webkit-transform .2s ease-in-out;
+  transition: -webkit-transform .2s ease-in-out;
+  transition: transform .2s ease-in-out;
+  transition: transform .2s ease-in-out, -webkit-transform .2s ease-in-out;
+}
+
 @media screen and (max-width: 900px) and (min-width: 401px), screen and (max-width: 400px) {
   .square {
     width: 0;
     height: 0;
+  }
+  .hamburgerBtnContainer {
+    display: block;
+  }
+  .navbar {
+    left: -100vw;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    top: 0;
+    position: fixed;
+    -webkit-transition: .1s ease-in-out;
+    transition: .1s ease-in-out;
   }
   .navbar ul {
     -webkit-box-orient: vertical;
@@ -903,9 +990,6 @@ body {
   }
   .videoContainer {
     height: 50vh;
-  }
-  .aboutUs {
-    padding: 0;
   }
   .aboutUs .container {
     -webkit-box-orient: vertical;
@@ -923,14 +1007,16 @@ body {
     padding: 40px 0;
   }
   .aboutUs .container .infoContainer .title {
+    width: 80vw;
     font-size: 30px;
+    text-align: center;
   }
   .aboutUs .container .infoContainer .descriptionContainer {
-    width: 100vw;
+    width: 90vw;
   }
   .aboutUs .container .infoContainer .descriptionContainer .description {
     width: 100%;
-    padding: 20px;
+    padding: 20px 40px;
     font-size: 20px;
   }
   .priceList .sectionName {
@@ -943,33 +1029,47 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .priceList .cardContainer .card {
-    width: 80vw;
+  .priceList .cardContainer .passCard {
+    width: 90vw;
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
-    min-height: 50vh;
     font-size: 20px;
     margin: 40px 0;
-    padding: 60px 20px;
+    -webkit-transition: 0.4s ease-out;
+    transition: 0.4s ease-out;
   }
-  .priceList .cardContainer .card:not(:first-child) {
+  .priceList .cardContainer .passCard:not(:first-child) {
     margin-left: 0;
   }
-  .priceList .cardContainer .card:hover ~ .card {
+  .priceList .cardContainer .passCard:hover ~ .card {
     position: relative;
     -webkit-transform: translateX(0);
             transform: translateX(0);
     -webkit-transition: 0;
     transition: 0;
   }
-  .priceList .cardContainer .card ul li {
+  .priceList .cardContainer .passCard ul {
+    display: none;
+  }
+  .priceList .cardContainer .passCard ul li {
     padding: 5px 0;
   }
-  .priceList .cardContainer .card .title {
+  .priceList .cardContainer .passCard .title {
+    margin-top: 0;
     font-size: 50px;
   }
-  .priceList .cardContainer .card .buyBtn {
+  .priceList .cardContainer .passCard .expand {
+    display: block;
+    background-color: transparent;
+    border: none;
+    color: white;
+  }
+  .priceList .cardContainer .passCard .expand:focus, .priceList .cardContainer .passCard .expand:active {
+    outline: none;
+  }
+  .priceList .cardContainer .passCard .buyBtn {
+    display: none;
     width: 150px;
     height: 50px;
     font-size: 35px;
@@ -1016,7 +1116,7 @@ body {
     padding: 5px 0;
   }
   .personalTraining .worth .right {
-    width: 80vw;
+    width: 75vw;
     font-size: 18px;
   }
   .personalTraining .worth .right p {
@@ -1038,7 +1138,8 @@ body {
     height: 350px;
     font-size: 60px;
   }
-  .personalTraining .qualifications .card .icon, .personalTraining .qualifications .card p {
+  .personalTraining .qualifications .card .icon,
+  .personalTraining .qualifications .card p {
     font-size: 25px;
   }
   .contact .title {
@@ -1081,11 +1182,10 @@ body {
             flex-direction: column;
   }
   .priceList .cardContainer .card {
-    width: 70vw;
-    height: 75vh;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
     font-size: 15px;
-    margin: 40px 0;
-    padding: 20px 40px;
   }
   .priceList .cardContainer .card:not(:first-child) {
     margin-left: 0;
@@ -1102,6 +1202,7 @@ body {
   }
   .priceList .cardContainer .card ul li {
     padding: 5px 0;
+    font-size: 15px;
   }
   .priceList .cardContainer .card .title {
     font-size: 50px;
@@ -1123,5 +1224,11 @@ body {
     width: 300px;
     height: 400px;
   }
+}
+
+.showPassInfo {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
 }
 /*# sourceMappingURL=indexStyle.css.map */
