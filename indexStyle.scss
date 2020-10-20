@@ -239,12 +239,7 @@ body {
         margin-left: -80px;
       }
       &:hover {
-        transform: translateY(-20px);
-        transition: 0.4s ease-out;
-      }
-      &:hover ~ .card {
-        position: relative;
-        transform: translateX(80px);
+        transform: translateY(-20px) translateX(-100px);
         transition: 0.4s ease-out;
       }
       .title {
@@ -697,11 +692,6 @@ body {
         &:not(:first-child) {
           margin-left: 0;
         }
-        &:hover ~ .card {
-          position: relative;
-          transform: translateX(0);
-          transition: 0;
-        }
         ul {
           display: none;
           li {
@@ -839,11 +829,6 @@ body {
         font-size: 15px;
         &:not(:first-child) {
           margin-left: 0;
-        }
-        &:hover ~ .card {
-          position: relative;
-          transform: translateX(0);
-          transition: 0;
         }
         ul {
           margin: 10px 0;
