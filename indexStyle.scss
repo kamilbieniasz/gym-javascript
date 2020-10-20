@@ -60,13 +60,13 @@ body {
   width: 100vw;
   height: 8vh;
   position: sticky;
-  background-color: #a0cadf;
+  background-color: #4EA5CF;
   top: 0;
   z-index: 3;
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
+  position: fixed;
   
   ul {
     display: flex;
